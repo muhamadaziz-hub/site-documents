@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="дизайн л.css">
+  <title>Document</title>
+ <style>
+  .submenu {
+    display: none;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-top: 10px;
+  }
+
+  .submenu button {
+    margin: 5px 0;
+    width: auto;
+    align-self: flex-start;
+  }
+</style>
+
+</head>
+<body>
+  <header>
+    <h1>каталог документов</h1>
+
+    <button onclick="toggleSubmenu()">главная</button>
+
+   <div class="search-box">
+  <input type="text" id="searchInput" placeholder="пиши сюда">
+  <button onclick="searchDocuments()">поиск</button>
+  <button onclick="location.reload()">сброс</button>
+</div>
+
+    <div class="submenu" id="submenu">
+        <button class="ony" onclick="location.href='index.html'">дамой</button>
+      <button class="ony" onclick="location.href='o.html'">Образовательные документы</button>
+      <button class="ony" onclick="location.href='l.html'">Личные документы</button>
+      <button class="ony" onclick="location.href='of.html'">Официальные документы</button>
+    </div>
+  </header>
+  <script>
+  function toggleSubmenu() {
+    const submenu = document.getElementById('submenu');
+    submenu.style.display = submenu.style.display === 'flex' ? 'none' : 'flex';
+  }
+
+  function searchDocuments() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const cards = document.querySelectorAll('.card');
+    let found = false;
+
+    cards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      if (input === "" || text.includes(input)) {
+        card.style.display = "block";
+        found = true;
+      } else {
+        card.style.display = "none";
+      }
+    });
+    if (!found) {
+      cards.forEach(card => {
+        card.style.display = "block";
+      });
+    }
+  }
+</script>
+
+  <div class="container">
+
+<div class="card"onclick="location.href='zayav pasport.pdf'">
+      <img src="d1b45028800a415a48cc988f3b49badf.png" alt="Фото" class="card-img">
+      <div class="card-body">
+        <h3>Заявление на выдачу паспорта</h3>
+      </div>
+   </div> 
+
+   <div class="card"onclick="location.href='zayav vod udos.pdf'">
+      <img src="d1b45028800a415a48cc988f3b49badf.png" alt="Фото" class="card-img">
+      <div class="card-body">
+        <h3>Заявление на выдачу водительских удостоверений</h3>
+      </div>
+   </div> 
+
+   <div class="card"onclick="location.href='zayav reg mest jit.pdf'">
+      <img src="d1b45028800a415a48cc988f3b49badf.png" alt="Фото" class="card-img">
+      <div class="card-body">
+        <h3>Заявление на регистрацию по месту жительства</h3>
+      </div>
+   </div> 
+
+   <div class="card"onclick="location.href='zayav zagran pasport.pdf'">
+      <img src="d1b45028800a415a48cc988f3b49badf.png" alt="Фото" class="card-img">
+      <div class="card-body">
+        <h3>Заявление на оформление заграничного паспорта</h3>
+      </div>
+   </div> 
+  </div>
+</body>
+</html>

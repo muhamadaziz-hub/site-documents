@@ -1,0 +1,54 @@
+body{
+  background:url(tmb_338883_778376.jpg)no-repeat center center fixed;
+    background-size: cover;
+}
+button{
+     background: url(RcKO.gif) no-repeat center center;
+    margin-top: 40px;
+    margin-left: 30px;
+    border-radius: 5px;
+}
+button:hover{
+    background: rgb(13, 155, 143);
+    color: white;
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+h1{
+    text-align: center;
+    margin-top: 40px;
+    color: rgb(241, 233, 233);
+}
+.search-box{
+   float: right; 
+ margin-top: -20px;
+}
+.search-box input{
+ border-radius: 10px;
+}
+.container{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+     gap: 200px;
+}
+.card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 200px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+margin-top: 150px;
+transform: scale(1.1);
+    transition: 0.3s;
+    background-color: #ccc;
+    cursor: pointer;
+}
+.card-img { width: 100%; border-radius: 4px; object-fit: cover;height: 150px;}
+.card-body { margin-top: 8px; }
+.card :hover{
+     transform: scale(1.1);
+    transition: 0.3s;
+}

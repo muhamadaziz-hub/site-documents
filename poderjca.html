@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Поддержка</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background:url(10.jpg);
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .feedback {
+      margin: 50px auto;
+      padding: 20px;
+      max-width: 600px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 25px;
+      font-size: 16px;
+      background: url(RcKO.gif);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+    background: rgb(13, 155, 143);
+    color: white;
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.3s
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Поддержка</h1>
+  </header>
+  <div class="feedback">
+    <h2>Отправьте сообщение</h2>
+    <form id="supportForm">
+      <textarea id="message" placeholder="Введите ваши вопросы или жалобы..." required></textarea><br>
+      <button type="submit">Отправить</button>
+    </form>
+    <button class="ony" onclick="location.href='index.html'">домой</button>
+  </div>
+
+  <script>
+    document.getElementById("supportForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const message = encodeURIComponent(document.getElementById("message").value);
+      const email = "muhamadaminkamilov5@gmail.com";
+      const subject = encodeURIComponent("Сообщение с сайта поддержки");
+      const mailtoLink = `mailto:${email}?subject=${subject}&body=${message}`;
+      window.location.href = mailtoLink;
+    });
+  </script>
+</body>
+</html>
